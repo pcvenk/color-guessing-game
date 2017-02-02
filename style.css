@@ -25,6 +25,8 @@ h1 {
     text-align: center;
     font-weight: 300;
     text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 1.2px;
     padding: 20px 0;
 }
 
@@ -36,4 +38,26 @@ h1 {
 .navbar {
     background: white;
     text-align: center;
+}
+
+.btns {
+    border: none;
+    background: white;
+    color: steelblue;
+    font-family: 'Lato';
+    outline: none;
+    font-size: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+.btns:hover {
+    background: steelblue;
+    color: white;
+}
+
+.message {
+    width: 20%;
 }
