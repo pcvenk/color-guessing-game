@@ -1,0 +1,39 @@
+body {
+    background: #232323;
+    margin: 0;
+}
+
+.square {
+    width: 30%;
+    margin: 1.66%;
+    padding-bottom: 30%;
+    float: left;
+    background: darkmagenta;
+}
+
+.squareContainer {
+    max-width: 600px;
+    margin: 0 auto;
+
+}
+
+h1 {
+    background: steelblue;
+    color: white;
+    font-family: 'Lato';
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+#rgbDisplay {
+    font-size: 200%;
+    text-transform: uppercase;
+}
+
+.navbar {
+    background: white;
+    text-align: center;
+}
