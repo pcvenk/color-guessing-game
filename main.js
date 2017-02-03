@@ -5,8 +5,21 @@ var pickedColor = randomColor();
 var rgbDisplay = document.querySelector('#rgbDisplay');
 var message = document.querySelector('#message');
 var heading = document.querySelector('h1');
+var playAgain = document.querySelector('.btns');
 
 rgbDisplay.textContent = pickedColor;
+
+playAgain.addEventListener('click', function(){
+    colors = generateRandomColors(6);
+    pickedColor = randomColor();
+    rgbDisplay.textContent = pickedColor;
+
+    for(var i = 0; i < squares.length; i++){
+        //adding colors to squares
+        squares[i].style.background = colors[i];
+    }
+
+});
 
 for(var i = 0; i < squares.length; i++){
     //adding colors to squares
