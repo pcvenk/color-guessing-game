@@ -9,8 +9,9 @@ var colors = [
 
 var squares = document.querySelectorAll('.square');
 var pickedColor = colors[3];
-
 var rgbDisplay = document.querySelector('#rgbDisplay');
+var message = document.querySelector('#message');
+
 rgbDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
@@ -20,9 +21,15 @@ for(var i = 0; i < squares.length; i++){
     squares[i].addEventListener('click', function(){
        var clickedColor = this.style.background;
        if(clickedColor === pickedColor){
-           console.log('You quessed it right');
+           message.textContent = 'Hooray!!!';
+
+           for(var i = 0; i < squares.length; i++){
+               squares[i].style.background = pickedColor;
+           }
+
        } else {
-           console.log('Wrong');
+           this.style.background = '#232323';
+           message.textContent = 'Quess Again';
        }
     });
 }
