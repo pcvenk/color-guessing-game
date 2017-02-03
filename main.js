@@ -22,6 +22,7 @@ playAgain.addEventListener('click', function(){
     }
 
     message.textContent = '';
+    playAgain.textContent = 'New Colors';
 
 });
 
@@ -34,6 +35,7 @@ for(var i = 0; i < squares.length; i++){
        // won
        if(clickedColor === pickedColor){
            message.textContent = 'Hooray!!!';
+           playAgain.textContent = 'Play Again?';
 
            for(var i = 0; i < squares.length; i++){
                squares[i].style.background = pickedColor;
