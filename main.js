@@ -9,15 +9,19 @@ var playAgain = document.querySelector('.btns');
 
 rgbDisplay.textContent = pickedColor;
 
+//reset button
 playAgain.addEventListener('click', function(){
     colors = generateRandomColors(6);
     pickedColor = randomColor();
     rgbDisplay.textContent = pickedColor;
+    heading.style.background = 'steelblue';
 
     for(var i = 0; i < squares.length; i++){
         //adding colors to squares
         squares[i].style.background = colors[i];
     }
+
+    message.textContent = '';
 
 });
 

@@ -60,6 +60,10 @@ h1 {
     color: white;
 }
 
-.message {
-    width: 20%;
+#message {
+    width: 30%;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: inherit;
 }
