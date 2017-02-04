@@ -1,4 +1,6 @@
 var colors = generateRandomColors(6);
+var initialScore = 100;
+var gameOver = false;
 
 var squares = document.querySelectorAll('.square');
 var pickedColor = randomColor();
@@ -6,6 +8,7 @@ var rgbDisplay = document.querySelector('#rgbDisplay');
 var message = document.querySelector('#message');
 var heading = document.querySelector('h1');
 var playAgain = document.querySelector('.btns');
+var score = document.querySelector('#score');
 
 rgbDisplay.textContent = pickedColor;
 
@@ -33,7 +36,7 @@ for(var i = 0; i < squares.length; i++){
     squares[i].addEventListener('click', function(){
        var clickedColor = this.style.background;
        // won
-       if(clickedColor === pickedColor){
+       if(clickedColor === pickedColor && !gameOver){
            message.textContent = 'Hooray!!!';
            playAgain.textContent = 'Play Again?';
 
@@ -42,10 +45,18 @@ for(var i = 0; i < squares.length; i++){
            }
 
            heading.style.background = pickedColor;
+           initialScore += 20;
+           score.textContent = initialScore;
+
        //  try again
-       } else {
+       } else if (initialScore === 20) {
+            gameOver = true;
+            alert('game over');
+        } else {
            this.style.background = '#232323';
            message.textContent = 'Quess Again';
+           initialScore -= 20;
+           score.textContent = initialScore;
        }
     });
 }

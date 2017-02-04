@@ -32,6 +32,20 @@ h1 {
     padding: 20px 0;
 }
 
+.score-container {
+    position: relative;
+    top: 30px;
+    left: 210px;
+}
+
+h3 {
+
+    color: white;
+    font-family: 'Lato';
+    font-weight: 200;
+
+}
+
 #rgbDisplay {
     font-size: 200%;
     text-transform: uppercase;
