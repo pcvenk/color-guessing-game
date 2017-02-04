@@ -27,6 +27,8 @@ playAgain.addEventListener('click', function(){
     message.textContent = '';
     playAgain.textContent = 'New Colors';
 
+    //todo reset counter back to initial score on pressing the play again button
+
 });
 
 for(var i = 0; i < squares.length; i++){
@@ -37,12 +39,12 @@ for(var i = 0; i < squares.length; i++){
        var clickedColor = this.style.background;
        // won
        if(clickedColor === pickedColor && !gameOver){
-           message.textContent = 'Hooray!!!';
-           playAgain.textContent = 'Play Again?';
-
            for(var i = 0; i < squares.length; i++){
                squares[i].style.background = pickedColor;
            }
+
+           message.textContent = 'Hooray!!!';
+           playAgain.textContent = 'Continue';
 
            heading.style.background = pickedColor;
            initialScore += 20;
@@ -50,8 +52,11 @@ for(var i = 0; i < squares.length; i++){
 
        //  try again
        } else if (initialScore === 20) {
-            gameOver = true;
-            alert('game over');
+           gameOver = true;
+
+           playAgain.textContent = 'Play Again?';
+           message.textContent = 'Game Over';
+
         } else {
            this.style.background = '#232323';
            message.textContent = 'Quess Again';
