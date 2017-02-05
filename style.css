@@ -72,6 +72,11 @@ h3 {
     color: white;
 }
 
+.selected {
+    background-color: steelblue;
+    color: white;
+}
+
 #message {
     display: inline-block;
     width: 20%;
