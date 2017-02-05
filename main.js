@@ -14,8 +14,17 @@ var playAgain = document.querySelector('.btns');
 var score = document.querySelector('#score');
 var easyBtn = document.querySelector('#easy');
 var hardBtn = document.querySelector('#hard');
+// var shardBtn = document.querySelector('#superhard');
 
 rgbDisplay.textContent = pickedColor;
+
+//superhard button
+// shardBtn.addEventListener('click', function(){
+//     shardBtn.classList.add('selected');
+//     easyBtn.classList.remove('selected');
+//     hardBtn.classList.remove('selected');
+// });
+
 
 //hard button
 hardBtn.addEventListener('click', function(){
@@ -123,6 +132,7 @@ for(var i = 0; i < squares.length; i++){
            console.log('Deducting');
        }
     });
+    modeSelection = true;
 }
 
 //picking up a random color
