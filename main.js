@@ -2,6 +2,7 @@ var colors = generateRandomColors(6);
 var initialScore = 100;
 var gameOver = false;
 
+
 var squares = document.querySelectorAll('.square');
 var pickedColor = randomColor();
 var rgbDisplay = document.querySelector('#rgbDisplay');
@@ -14,20 +15,24 @@ rgbDisplay.textContent = pickedColor;
 
 //reset button
 playAgain.addEventListener('click', function(){
-    colors = generateRandomColors(6);
-    pickedColor = randomColor();
-    rgbDisplay.textContent = pickedColor;
-    heading.style.background = 'steelblue';
 
-    for(var i = 0; i < squares.length; i++){
-        //adding colors to squares
-        squares[i].style.background = colors[i];
-    }
+        colors = generateRandomColors(6);
+        pickedColor = randomColor();
+        rgbDisplay.textContent = pickedColor;
+        heading.style.background = 'steelblue';
 
-    message.textContent = '';
-    playAgain.textContent = 'New Colors';
+        for(var i = 0; i < squares.length; i++){
+            //adding colors to squares
+            squares[i].style.background = colors[i];
+        }
 
-    //todo reset counter back to initial score on pressing the play again button
+        message.textContent = '';
+        playAgain.textContent = 'New Colors';
+
+        if(gameOver){
+            initialScore = 100;
+            score.textContent = 100;
+        }
 
 });
 
@@ -50,18 +55,24 @@ for(var i = 0; i < squares.length; i++){
            initialScore += 20;
            score.textContent = initialScore;
 
+           console.log('Still PLaying');
+
        //  try again
-       } else if (initialScore === 20) {
+       } else if (initialScore < 20) {
            gameOver = true;
 
            playAgain.textContent = 'Play Again?';
            message.textContent = 'Game Over';
+
+           console.log('Game Over');
 
         } else {
            this.style.background = '#232323';
            message.textContent = 'Quess Again';
            initialScore -= 20;
            score.textContent = initialScore;
+
+           console.log('Deducting');
        }
     });
 }
